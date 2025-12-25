@@ -294,7 +294,7 @@
         // --- CONFIGURATION ---
         const CONFIG = {
             maxSizeMB: 150,
-            endpoint: '/upload_handler.php' // Ensure this PHP file exists on server
+            endpoint: null //'/upload_handler.php' // Ensure this PHP file exists on server
         };
 
         // --- STATE MANAGEMENT ---
@@ -482,48 +482,19 @@
         }
 
         function uploadFile(item) {
-            return new Promise(resolve => {
-                item.status = 'uploading';
-                renderList();
+    return new Promise(resolve => {
+        // Fake uploading state
+        item.status = 'uploading';
+        renderList();
 
-                const formData = new FormData();
-                formData.append('file', item.file);
+        // Fake delay giống upload thật
+        setTimeout(() => {
+            item.status = 'success';
+            resolve(true);
+        }, 600 + Math.random() * 800); // random cho giống thật
+    });
+}
 
-                const xhr = new XMLHttpRequest();
-                xhr.open('POST', CONFIG.endpoint, true);
-
-                xhr.onload = function() {
-                    if (xhr.status === 200) {
-                        try {
-                            // Try to parse JSON response
-                            const res = JSON.parse(xhr.responseText);
-                            if(res.success) {
-                                item.status = 'success';
-                                resolve(true);
-                            } else {
-                                item.status = 'error';
-                                console.error('Server Msg:', res.message);
-                                resolve(false);
-                            }
-                        } catch(e) {
-                            // If response is not JSON (e.g. standard PHP error)
-                            item.status = 'success'; // Assume success if 200 OK but no JSON, or set to error to be safe
-                            resolve(true); 
-                        }
-                    } else {
-                        item.status = 'error';
-                        resolve(false);
-                    }
-                };
-                
-                xhr.onerror = function() {
-                    item.status = 'error';
-                    resolve(false);
-                };
-                
-                xhr.send(formData);
-            });
-        }
 
         // --- POPUP UI HANDLER ---
         function showPopup(type, title, message) {
@@ -554,4 +525,5 @@
         }
     </script>
 </body>
+
 </html>
