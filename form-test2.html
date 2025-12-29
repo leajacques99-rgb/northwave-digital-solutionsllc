@@ -261,7 +261,7 @@
                             Feedback provided to shortlisted candidates
                         </p>
                 
-                        <button type="button" class="btn-submit" onclick="submitForm()">
+                        <button type="button" class="btn-submit" onclick="submitForm(this)">
                             <i class="fa-solid fa-download"></i> View & Download Assessment
                         </button>
                     </div>
@@ -309,7 +309,7 @@
                         </p>
                         
                         <!-- Nút mở Popup -->
-                        <button type="button" class="btn-submit" onclick="submitForm()">
+                        <button type="button" class="btn-submit" onclick="submitForm(this)">
                             <i class="fa-solid fa-download"></i> Get Task
                         </button>
                     </div>
@@ -402,20 +402,19 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        function submitForm() {
-            const btn = document.querySelector('.btn-submit');
+        function submitForm(btn) {
             const originalText = btn.innerHTML;
-            
+        
             btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Processing...';
             btn.disabled = true;
-
+        
             setTimeout(() => {
-                const modal = document.getElementById('downloadModal');
-                modal.classList.add('show');
+                document.getElementById('downloadModal').classList.add('show');
                 btn.innerHTML = originalText;
                 btn.disabled = false;
             }, 800);
         }
+
 
         function closeModal() {
             document.getElementById('downloadModal').classList.remove('show');
