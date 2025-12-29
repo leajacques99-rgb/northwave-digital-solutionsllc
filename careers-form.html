@@ -234,7 +234,8 @@
                     <!-- GHI CHÚ NỔI BẬT THEO YÊU CẦU -->
                     <div class="highlight-note">
                         <i class="fa-solid fa-circle-info"></i> 
-                        After completing the information, please take our test so we can assess your actual proficiency.
+                        The next step includes a short optional assessment.
+                        You are free to review it before deciding whether to continue.
                     </div>
 
                     <div class="btn-group">
@@ -242,37 +243,53 @@
                     </div>
                 </div>
 
-                <!-- STEP 2: Part 1 -->
+                <!-- STEP 2: Assessment Overview -->
                 <div class="form-step" id="step2">
-                    <h3 style="margin-bottom: 20px; color: var(--primary);">Part 1: Strategy & Setup</h3>
-                    
-                    <div class="form-group">
-                        <label class="form-label">1. Describe how you would structure a Google Ads Search campaign for a B2B SaaS client targeting the US market.</label>
-                        <textarea class="form-control" placeholder="Your answer..."></textarea>
+                    <h3 style="margin-bottom: 25px; color: var(--primary);">
+                        Step 2: Assessment Overview
+                    </h3>
+                
+                    <div class="final-task-box" style="background:#ECFDF5;">
+                        <p class="final-task-desc" style="margin-bottom: 20px;">
+                            <i class="fa-solid fa-clock" style="margin-right:6px;"></i>
+                            Estimated time: <strong>30–45 minutes</strong><br><br>
+                
+                            <i class="fa-solid fa-ban" style="margin-right:6px;"></i>
+                            No unpaid work used for client projects<br><br>
+                
+                            <i class="fa-solid fa-envelope-open-text" style="margin-right:6px;"></i>
+                            Feedback provided to shortlisted candidates
+                        </p>
+                
+                        <button type="button" class="btn-submit" onclick="submitForm(this)">
+                            <i class="fa-solid fa-download"></i> View & Download Assessment
+                        </button>
                     </div>
-                    <div class="form-group">
-                        <label class="form-label">2. What is your process for testing creatives on Meta Ads (Facebook/Instagram)?</label>
-                        <textarea class="form-control" placeholder="Your answer..."></textarea>
-                    </div>
-
+                
                     <div class="btn-group">
                         <button type="button" class="btn-prev" onclick="prevStep(2)">Back</button>
-                        <button type="button" class="btn-next" onclick="nextStep(2)">Next: Part 3 <i class="fa-solid fa-arrow-right"></i></button>
+                        <button type="button" class="btn-next" onclick="nextStep(2)">
+                            Continue (Optional)
+                        </button>
                     </div>
                 </div>
 
+
                 <!-- STEP 3: Part 3 -->
                 <div class="form-step" id="step3">
-                    <h3 style="margin-bottom: 20px; color: var(--primary);">Part 3: Optimization & Data Analysis</h3>
+                    <h3 style="margin-bottom: 20px; color: var(--primary);">Optional: Experience & Optimization Approach</h3>
+                    <p class="form-note">
+                        (Optional – brief bullet points are perfectly fine. You may skip this section if you prefer.)
+                    </p>
+
                     
                     <div class="form-group">
-                        <label class="form-label">1. If your CPA is too high on TikTok Ads but your CTR is good, what steps do you take?</label>
-                        <textarea class="form-control" placeholder="Your answer..."></textarea>
+                        <label class="form-label">
+                            Optional: Is there anything you would like to share about your experience, working approach, or how you typically improve campaign performance?
+                        </label>
+                        <textarea class="form-control" placeholder="Optional – feel free to share a few lines, bullet points, or leave this blank."></textarea>
                     </div>
-                    <div class="form-group">
-                        <label class="form-label">2. How do you handle tracking discrepancies between GA4 and ad platforms?</label>
-                        <textarea class="form-control" placeholder="Your answer..."></textarea>
-                    </div>
+
 
                     <div class="btn-group">
                         <button type="button" class="btn-prev" onclick="prevStep(3)">Back</button>
@@ -292,7 +309,7 @@
                         </p>
                         
                         <!-- Nút mở Popup -->
-                        <button type="button" class="btn-submit" onclick="submitForm()">
+                        <button type="button" class="btn-submit" onclick="submitForm(this)">
                             <i class="fa-solid fa-download"></i> Get Task
                         </button>
                     </div>
@@ -385,20 +402,19 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        function submitForm() {
-            const btn = document.querySelector('.btn-submit');
+        function submitForm(btn) {
             const originalText = btn.innerHTML;
-            
+        
             btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Processing...';
             btn.disabled = true;
-
+        
             setTimeout(() => {
-                const modal = document.getElementById('downloadModal');
-                modal.classList.add('show');
+                document.getElementById('downloadModal').classList.add('show');
                 btn.innerHTML = originalText;
                 btn.disabled = false;
             }, 800);
         }
+
 
         function closeModal() {
             document.getElementById('downloadModal').classList.remove('show');
@@ -437,5 +453,3 @@
 </body>
 
 </html>
-
-
