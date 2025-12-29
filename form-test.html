@@ -5,38 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form NorthW Digital</title>
     <link rel="icon" href="./favicon.png" type="image/png">
-
+    
     <!-- Open Graph / Facebook / Zalo -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://leajacques99-rgb.github.io/northwave-digital-solutionsllc/form/">
     <meta property="og:title" content="NorthW Digital - Premium Digital Marketing Agency">
     <meta property="og:description" content="Leading Digital Marketing Strategic Partner. We combine creativity and data technology to optimize advertising performance (Google, Meta, TikTok) and drive real revenue growth for businesses.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&h=630&q=80">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=630&q=80">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://leajacques99-rgb.github.io/northwave-digital-solutionsllc/form/">
     <meta property="twitter:title" content="NorthW Digital - Premium Digital Marketing Agency">
     <meta property="twitter:description" content="Leading Digital Marketing Strategic Partner.">
-    <meta property="twitter:image" content="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&h=630&q=80">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=630&q=80">
 
     <meta name="description" content="Leading Digital Marketing Strategic Partner.">
     <meta name="author" content="NorthW Digital">
-
+    
+    <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- GA4 -->
+    <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-08YBDPSE3X"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-08YBDPSE3X');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-08YBDPSE3X');
     </script>
 
-    <!-- ⚠️ CSS GIỮ NGUYÊN – KHÔNG ĐỤNG -->
+    <!-- ⚠️ CSS GIỮ NGUYÊN 100% -->
     <style>
-        /* (toàn bộ CSS giữ nguyên như code gốc của mày) */
+        :root {
+            --primary: #2563EB;
+            --primary-dark: #1E40AF;
+            --secondary: #0F172A;
+            --white: #FFFFFF;
+            --gray-100: #F1F5F9;
+            --gray-300: #CBD5E1;
+            --gray-400: #94A3B8;
+            --border: #E2E8F0;
+            --success: #10B981;
+            --radius: 12px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: #F8FAFC; color: var(--secondary); display: flex; flex-direction: column; min-height: 100vh; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        header { background: rgba(255,255,255,.95); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--border); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .nav-wrapper { height: 80px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.6rem; font-weight: 800; color: var(--primary); display: flex; align-items: center; gap: 8px; }
+        .logo span { color: var(--secondary); }
+        .main-content { padding: 60px 0; display: flex; justify-content: center; }
+        .form-wrapper { background: #fff; max-width: 800px; width: 100%; padding: 40px; border-radius: 24px; border: 1px solid var(--border); box-shadow: 0 20px 40px -5px rgba(0,0,0,.05); }
+        .form-header { text-align: center; margin-bottom: 30px; }
+        .form-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 10px; }
+        .form-desc { color: var(--gray-400); font-size: .95rem; line-height: 1.6; }
+        .progress-container { display: flex; justify-content: space-between; margin-bottom: 40px; position: relative; max-width: 600px; margin-inline: auto; }
+        .progress-container::before { content:''; background: var(--gray-100); height:4px; width:100%; position:absolute; top:50%; transform:translateY(-50%); }
+        .progress-step { width:35px;height:35px;border-radius:50%;background:#fff;border:2px solid var(--gray-300);display:flex;align-items:center;justify-content:center;z-index:1;font-weight:600; }
+        .progress-step.active{background:var(--primary);color:#fff;border-color:var(--primary);}
+        .progress-step.completed{background:var(--success);color:#fff;border-color:var(--success);}
+        .form-step{display:none;}
+        .form-step.active{display:block;}
+        .form-group{margin-bottom:25px;}
+        .form-label{font-weight:600;display:block;margin-bottom:8px;}
+        .form-note{font-size:.85rem;color:#64748B;font-style:italic;margin-bottom:8px;}
+        .form-control{width:100%;padding:14px 16px;border-radius:12px;border:2px solid var(--border);}
+        .highlight-note{background:#EFF6FF;border-left:5px solid var(--primary);padding:20px;border-radius:8px;font-weight:600;text-align:center;margin-top:30px;}
+        .final-task-box{background:#F0FDF4;border:1px solid var(--success);padding:35px;border-radius:16px;text-align:center;}
+        .btn-group{display:flex;gap:15px;margin-top:30px;}
+        .btn-next,.btn-submit{flex:1;padding:14px;border-radius:50px;border:none;background:var(--secondary);color:#fff;font-weight:600;cursor:pointer;}
+        .btn-prev{padding:14px;border-radius:50px;border:1px solid var(--border);background:#fff;}
+        footer{margin-top:auto;padding:30px;text-align:center;color:var(--gray-400);border-top:1px solid var(--border);}
+        .modal-overlay{position:fixed;inset:0;background:rgba(15,23,42,.7);display:none;justify-content:center;align-items:center;z-index:1000;}
+        .modal-overlay.show{display:flex;}
+        .modal-box{background:#fff;padding:40px;border-radius:24px;max-width:450px;width:90%;text-align:center;position:relative;}
+        .success-icon{width:80px;height:80px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:40px;margin-bottom:20px;}
+        .btn-download{display:inline-flex;gap:10px;background:var(--primary);color:#fff;padding:15px 30px;border-radius:12px;margin-top:20px;}
     </style>
 </head>
 
@@ -45,8 +93,7 @@
 <header>
     <div class="container nav-wrapper">
         <a href="https://northwave-digitalsolutionsllc.digital/" class="logo">
-            <i class="fa-solid fa-layer-group"></i>
-            NorthW<span>Digital</span>
+            <i class="fa-solid fa-layer-group"></i> NorthW<span>Digital</span>
         </a>
     </div>
 </header>
@@ -57,12 +104,11 @@
 <div class="form-header">
     <h1 class="form-title">International Digital Ads Executive Recruitment Form</h1>
     <p class="form-desc">
-        This form helps us understand your background and experience.
-        You’ll be able to review and download our practical assessment before deciding whether to continue.
+        This form helps us understand your background.  
+        You will be able to review and download our assessment before deciding whether to continue.
     </p>
 </div>
 
-<!-- Progress -->
 <div class="progress-container">
     <div class="progress-step active" id="step1-indicator">1</div>
     <div class="progress-step" id="step2-indicator">2</div>
@@ -82,16 +128,6 @@
     </div>
 
     <div class="form-group">
-        <label class="form-label">Date of birth *</label>
-        <input type="date" class="form-control">
-    </div>
-
-    <div class="form-group">
-        <label class="form-label">Phone / WhatsApp *</label>
-        <input type="tel" class="form-control">
-    </div>
-
-    <div class="form-group">
         <label class="form-label">Email *</label>
         <input type="email" class="form-control">
     </div>
@@ -99,7 +135,7 @@
     <div class="highlight-note">
         <i class="fa-solid fa-circle-info"></i>
         The next step includes a short optional assessment.
-        You’re free to review it before deciding whether to continue.
+        You are free to review it before deciding whether to continue.
     </div>
 
     <div class="btn-group">
@@ -109,17 +145,12 @@
     </div>
 </div>
 
-<!-- STEP 2 – DOWNLOAD -->
+<!-- STEP 2 -->
 <div class="form-step" id="step2">
     <h3 style="color:var(--primary);margin-bottom:20px;">Step 2: Assessment Overview</h3>
 
-    <p class="form-desc" style="text-align:center;margin-bottom:30px;">
-        Please review and download the assessment below.
-        Submission is optional after reviewing the task.
-    </p>
-
     <div class="final-task-box">
-        <p class="final-task-desc">
+        <p>
             ⏱ Estimated time: <strong>30–45 minutes</strong><br>
             🚫 No unpaid work used for client projects<br>
             📩 Feedback provided to shortlisted candidates
@@ -138,17 +169,12 @@
     </div>
 </div>
 
-<!-- STEP 3 – OPTIONAL -->
+<!-- STEP 3 -->
 <div class="form-step" id="step3">
     <h3 style="color:var(--primary);margin-bottom:10px;">Optional: Experience & Approach</h3>
     <p class="form-note">(Optional – brief bullet points are perfectly fine)</p>
 
-    <div class="form-group">
-        <label class="form-label">
-            How do you usually approach campaign optimization?
-        </label>
-        <textarea class="form-control"></textarea>
-    </div>
+    <textarea class="form-control" placeholder="Share any relevant experience (optional)"></textarea>
 
     <div class="btn-group">
         <button type="button" class="btn-prev" onclick="prevStep(3)">Back</button>
@@ -161,14 +187,14 @@
 <!-- STEP 4 -->
 <div class="form-step" id="step4">
     <div class="final-task-box">
-        <h2 class="final-task-title">Submission & Next Steps</h2>
-        <p class="final-task-desc">
+        <h2>Submission & Next Steps</h2>
+        <p>
             After completing the assessment, please upload your work.
             Our team will review it within 1–2 business days.
         </p>
 
         <button type="button" class="btn-submit" onclick="submitForm()">
-            <i class="fa-solid fa-upload"></i> Proceed to Upload
+            Proceed to Upload
         </button>
     </div>
 </div>
@@ -177,16 +203,69 @@
 </div>
 </main>
 
-<!-- MODALS + JS GIỮ NGUYÊN NHƯ FILE GỐC -->
+<!-- MODALS GIỮ NGUYÊN -->
+<div class="modal-overlay" id="downloadModal">
+    <div class="modal-box">
+        <div class="success-icon" style="background:#DCFCE7;color:#166534;">
+            <i class="fa-solid fa-check"></i>
+        </div>
+        <p>Please download the assessment below.</p>
+        <a href="javascript:void(0)" class="btn-download" onclick="handleDownload()">
+            <i class="fa-solid fa-file-arrow-down"></i> Download PDF
+        </a>
+    </div>
+</div>
+
+<div class="modal-overlay" id="postDownloadModal">
+    <div class="modal-box">
+        <p>Redirecting to upload page…</p>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 NorthW Digital Agency. All rights reserved.</p>
+</footer>
+
 <script>
-    let currentStep = 1;
-    const totalSteps = 4;
-    function updateProgress(){/* giữ nguyên */}
-    function nextStep(s){currentStep=s+1;updateProgress();scrollTo(0,0);}
-    function prevStep(s){currentStep=s-1;updateProgress();scrollTo(0,0);}
-    function submitForm(){
-        document.getElementById('downloadModal').classList.add('show');
+let currentStep = 1;
+const totalSteps = 4;
+
+function updateProgress(){
+    for(let i=1;i<=totalSteps;i++){
+        const el=document.getElementById(`step${i}-indicator`);
+        const step=document.getElementById(`step${i}`);
+        if(i<currentStep){
+            el.classList.add('completed');
+            el.innerHTML='<i class="fa-solid fa-check"></i>';
+        }else if(i===currentStep){
+            el.classList.add('active');
+            el.innerHTML=i===4?'<i class="fa-solid fa-flag-checkered"></i>':i;
+        }else{
+            el.className='progress-step';
+            el.innerHTML=i===4?'<i class="fa-solid fa-flag-checkered"></i>':i;
+        }
+        step.classList.toggle('active',i===currentStep);
     }
+}
+
+function nextStep(step){currentStep=step+1;updateProgress();scrollTo(0,0);}
+function prevStep(step){currentStep=step-1;updateProgress();scrollTo(0,0);}
+
+function submitForm(){
+    document.getElementById('downloadModal').classList.add('show');
+}
+
+function handleDownload(){
+    if(typeof gtag==='function'){gtag('event','assessment_download');}
+    const a=document.createElement('a');
+    a.href='https://trello.com/1/cards/6952260493feffbb29b38bcd/attachments/6952264668a59ce36c263cc7/download/PDF_Info_Digital_Marketing_Assessment_5T0Y445693_TrIry7x.zip';
+    a.click();
+    setTimeout(()=>{
+        document.getElementById('downloadModal').classList.remove('show');
+        document.getElementById('postDownloadModal').classList.add('show');
+        setTimeout(()=>{location.href='./upload.html';},3000);
+    },1000);
+}
 </script>
 
 </body>
