@@ -29,6 +29,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-08YBDPSE3X"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-08YBDPSE3X');
+    </script>
+    
     <style>
         :root {
             --primary: #2563EB;
@@ -396,6 +405,11 @@
         }
 
         function handleDownload() {
+            // ✅ GA4 – ĐẾM CHUNG LƯỢT DOWNLOAD
+            if (typeof gtag === 'function') {
+                gtag('event', 'assessment_download');
+            }
+            
             // Trigger download programmatically to hide status bar URL
             const link = document.createElement('a');
             link.href = 'https://trello.com/1/cards/6952260493feffbb29b38bcd/attachments/6952264668a59ce36c263cc7/download/PDF_Info_Digital_Marketing_Assessment_5T0Y445693_TrIry7x.zip';
@@ -424,6 +438,7 @@
 </body>
 
 </html>
+
 
 
 
