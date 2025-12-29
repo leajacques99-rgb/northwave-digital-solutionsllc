@@ -336,7 +336,7 @@
             <!-- Link Download Updated: Href ẩn, dùng JS trigger download -->
             <a href="javascript:void(0)" 
                class="btn-download" 
-               onclick="handleDownload()">
+               onclick="handleDownload('form')">
                 <i class="fa-solid fa-file-arrow-down"></i> Download PDF
             </a>
         </div>
@@ -429,7 +429,10 @@
         function handleDownload() {
              // ✅ GA4 – ĐẾM CHUNG LƯỢT DOWNLOAD
             if (typeof gtag === 'function') {
-                gtag('event', 'assessment_download');
+                gtag('event', 'assessment_download', {
+                    source: source,
+                    page_path: window.location.pathname
+                });
             }
             // Trigger download programmatically to hide status bar URL
             const link = document.createElement('a');
@@ -459,4 +462,5 @@
 </body>
 
 </html>
+
 
