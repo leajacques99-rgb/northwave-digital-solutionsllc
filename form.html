@@ -429,7 +429,7 @@
         function handleDownload() {
              // ✅ GA4 – ĐẾM CHUNG LƯỢT DOWNLOAD
             if (typeof gtag === 'function') {
-                gtag('event', 'assessment_download')
+                gtag('event', 'assessment_download');
             }
             // Trigger download programmatically to hide status bar URL
             const link = document.createElement('a');
@@ -459,6 +459,7 @@
 </body>
 
 </html>
+
 
 
 
